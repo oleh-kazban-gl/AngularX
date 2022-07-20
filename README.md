@@ -1,3 +1,9 @@
+# Angular CLI & required global packages
+
+- npm i -g @angular/cli json-server
+- ng add @angular/material
+- npm i -s @angular/flex-layout @angular/cdk @ngx-translate/core
+
 # AngularX
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.4.
