@@ -28,6 +28,11 @@ Run `start:db` for running a fake REST API. This command will start a JSON serve
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
+## Basic architecture
+
+- `ng g m Core` (create Core module)
+- `ng g c core/layout/main-layout` (Create main layout)
+
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
