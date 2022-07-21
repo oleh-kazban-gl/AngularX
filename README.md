@@ -1,8 +1,16 @@
-# Angular CLI & required global packages
+# Project setup: Angular CLI & required global packages
 
-- npm i -g @angular/cli json-server
-- ng add @angular/material
-- npm i -s @angular/flex-layout @angular/cdk @ngx-translate/core
+- `npm i -g @angular/cli json-server` (installs globally Angular CLI and JSON server)
+- `ng new AngularX --create-application false --strict` (create an empty workspace without application inside and adjust some TypeScript compiler flags to force us to do the right things)
+- `cd AngularX`
+- `ng g application gl-app --prefix gl --style scss --routing` (creates gl-app application with routing module SCSS styles, "gl" prefix for components and directives)
+- `ng add @angular/material` (Add Angular Material components framework)
+- `npm i -s @angular/flex-layout @angular/cdk @ngx-translate/core` (Add FlexLayout and NGXTranslate packages)
+- `ng add @angular-eslint/schematics` (Adds ESLint support with the recommended support of Angular apps)
+- `npm install eslint-plugin-import eslint-config-airbnb-typescript --save-dev` (Add AirBnB styleguide rules for ESLint)
+- `npm i -d prettier eslint-config-prettier eslint-plugin-prettier` (Adds Prettier support with configs)
+- `npm i -d husky lint-staged` (Use Husky tasks for Git hooks)
+- `npm i -d webpack-bundle-analyzer` (Add bundle analysis tool)
 
 # AngularX
 
