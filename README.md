@@ -12,6 +12,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
+## Backend API emulation
+
+Run `start:db` for running a fake REST API. This command will start a JSON server with the database file provided in DataBase/db.json, port:1234 (see package.json:scripts).
+
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
