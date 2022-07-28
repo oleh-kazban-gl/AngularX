@@ -30,7 +30,7 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Basic architecture
 
-- `ng g m Core` (create Core module)
+- `ng g m core` (create Core module)
 - `ng g c core/layout/main-layout` (Create main layout)
 - `ng g m features/home --route home --module app.module.ts`
 - `ng g m features/about --route about --module app.module.ts`

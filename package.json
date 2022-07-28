@@ -9,7 +9,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "analyse": "ng build --prod -- stats-json && webpack-bundle-analyser ./dist/apps/stats.json"
+    "analyze": "ng build --configuration production --stats-json && webpack-bundle-analyzer ./dist/gl-app/stats.json"
   },
   "husky": {
     "hooks": {
