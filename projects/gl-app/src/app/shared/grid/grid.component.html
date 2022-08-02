@@ -1,0 +1,6 @@
+<!-- <button mat-flat-button color="primary" (click)="getData()">Get data</button> -->
+
+<pre>Title: {{ title }}</pre>
+<pre>Static Title: {{ staticTitle }}</pre>
+<pre *ngIf="entries.length">Entries: {{ entries | json }}</pre>
+<pre *ngIf="!entries.length">No Entries</pre>

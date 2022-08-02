@@ -2,9 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
-
+import { SharedModule } from '../shared/shared.module';
+import { MaterialModule } from '../shared/material.module';
 import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
 
 const declarations = [
@@ -18,8 +17,8 @@ const declarations = [
   imports: [
     CommonModule,
     RouterModule,
-    MatToolbarModule,
-    MatButtonModule
+    MaterialModule,
+    SharedModule
   ],
   exports: [
     ...declarations

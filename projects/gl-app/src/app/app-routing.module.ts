@@ -5,7 +5,11 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'home'
+    redirectTo: 'feed'
+  },
+  {
+    path: 'feed',
+    loadChildren: () => import('./features/feed/feed.module').then((m) => m.FeedModule),
   },
   {
     path: 'home',
@@ -15,9 +19,10 @@ const routes: Routes = [
     path: 'about',
     loadChildren: () => import('./features/about/about.module').then((m) => m.AboutModule),
   },
+  { path: 'feed', loadChildren: () => import('./features/feed/feed.module').then(m => m.FeedModule) },
   {
     path: '**',
-    redirectTo: 'home'
+    redirectTo: 'feed'
   }
 ];
 
