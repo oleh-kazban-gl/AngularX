@@ -3,15 +3,16 @@ import { CommonModule } from '@angular/common';
 
 import { MaterialModule } from './material.module';
 import { GridComponent } from './grid/grid.component';
-import { GridService } from './grid/grid.service';
 import { CardComponent } from './card/card.component';
-import { CardProjectionComponent } from './card-projection/card-projection.component';
+import { CardPostComponent } from './card-post/card-post.component';
+import { NoDataComponent } from './no-data/no-data.component';
 
 @NgModule({
   declarations: [
     GridComponent,
     CardComponent,
-    CardProjectionComponent
+    CardPostComponent,
+    NoDataComponent,
   ],
   imports: [
     CommonModule,
@@ -20,6 +21,5 @@ import { CardProjectionComponent } from './card-projection/card-projection.compo
   exports: [
     GridComponent
   ],
-  providers: [GridService]
 })
 export class SharedModule { }

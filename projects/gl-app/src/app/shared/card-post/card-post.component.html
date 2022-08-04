@@ -2,11 +2,11 @@
   <mat-card-title-group>
     <img mat-card-avatar *ngIf="model.avatar" [src]="model.avatar" />
     <mat-card-title>{{ model.title }}</mat-card-title>
-    <mat-card-subtitle *ngIf="model.subTitle">{{ model.subTitle }}</mat-card-subtitle>
+    <mat-card-subtitle>{{ subTitle }}</mat-card-subtitle>
   </mat-card-title-group>
   <mat-card-content>
     <img mat-card-image *ngIf="model.preview" [src]="model.preview" />
     <p>{{ model.content }}</p>
   </mat-card-content>
-  <mat-card-footer>{{ model.footer }}</mat-card-footer>
+  <mat-card-footer>{{ model.updatedAt | date }}</mat-card-footer>
 </mat-card>

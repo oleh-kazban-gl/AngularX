@@ -4,4 +4,5 @@ export interface ICard {
   content: string;
   footer: string;
   preview?: string;
+  avatar?: string;
 }
