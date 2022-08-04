@@ -21,7 +21,23 @@
     "lib": [
       "es2020",
       "dom"
-    ]
+    ],
+    "rootDir": ".",
+    "paths": {
+      "@gl/shared": [
+        "./projects/gl-app/src/app/shared/shared.module.ts"
+      ],
+      "@gl/material": [
+        "./projects/gl-app/src/app/shared/material.module.ts"
+      ],
+
+      "@gl/components": [
+        "./projects/gl-app/src/app/shared/components"
+      ],
+      "@gl/pipes": [
+        "./projects/gl-app/src/app/shared/pipes"
+      ],
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

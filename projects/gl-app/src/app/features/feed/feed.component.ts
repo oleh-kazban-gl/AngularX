@@ -28,6 +28,7 @@ export class FeedComponent {
       updatedAt: 'Mon Aug 01 2022 21:48:53 GMT+0300 (Eastern European Summer Time)',
       preview: 'http://placeimg.com/640/400',
       avatar: 'http://placeimg.com/640/400',
+      footer: 'some test caption for footer...'
     };
   }
 
@@ -47,6 +48,7 @@ export class FeedComponent {
           updatedAt: 'Mon Aug 01 2022 21:48:53 GMT+0300 (Eastern European Summer Time)',
           preview: 'http://placeimg.com/640/300',
           avatar: 'http://placeimg.com/640/400',
+          footer: 'some test caption for footer...'
         },
         {
           id: '57fc2d4c-cadf-4e8f-9a32-3932b53c5f8f',

@@ -8,5 +8,5 @@
     <img mat-card-image *ngIf="model.preview" [src]="model.preview" />
     <p>{{ model.content }}</p>
   </mat-card-content>
-  <mat-card-footer>{{ model.updatedAt | date }}</mat-card-footer>
+  <mat-card-footer>{{ model.updatedAt | date }} | {{ model.footer | noData }}</mat-card-footer>
 </mat-card>
