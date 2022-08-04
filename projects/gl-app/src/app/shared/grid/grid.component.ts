@@ -46,8 +46,8 @@ export class GridComponent implements OnInit, OnChanges {
     console.log('ngOnChanges: ', changes);
   }
 
-  // getData(): void {
-  //   this.update.emit();
-  // }
+  getData(): void {
+    this.update.emit();
+  }
 
 }

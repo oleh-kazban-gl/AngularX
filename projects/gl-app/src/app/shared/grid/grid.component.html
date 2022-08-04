@@ -1,6 +1,13 @@
-<!-- <button mat-flat-button color="primary" (click)="getData()">Get data</button> -->
+<button mat-flat-button color="primary" (click)="getData()">Get data</button>
 
 <pre>Title: {{ title }}</pre>
 <pre>Static Title: {{ staticTitle }}</pre>
-<pre *ngIf="entries.length">Entries: {{ entries | json }}</pre>
 <pre *ngIf="!entries.length">No Entries</pre>
+
+<ng-container *ngIf="entries.length">
+  <gl-card-projection *ngFor="let card of entries">
+    <h1 title>{{ card.title }}</h1>
+    <p content>{{ card.post }}</p>
+    <span footer>Date: {{ card.postedAt }}</span>
+  </gl-card-projection>
+</ng-container>

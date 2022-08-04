@@ -35,6 +35,10 @@ Run `ng generate component component-name` to generate a new component. You can 
 - `ng g m features/home --route home --module app.module.ts`
 - `ng g m features/about --route about --module app.module.ts`
 
+## Add components to the shared module
+
+- ` ng g c shared/card --change-detection OnPush --module shared --project gl-app`
+
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
