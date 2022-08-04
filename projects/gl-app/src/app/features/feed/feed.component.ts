@@ -28,7 +28,8 @@ export class FeedComponent {
       updatedAt: 'Mon Aug 01 2022 21:48:53 GMT+0300 (Eastern European Summer Time)',
       preview: 'http://placeimg.com/640/400',
       avatar: 'http://placeimg.com/640/400',
-      footer: 'some test caption for footer...'
+      footer: 'some test caption for footer...',
+      requiredIdentity: ['user', 'admin']
     };
   }
 
@@ -48,7 +49,8 @@ export class FeedComponent {
           updatedAt: 'Mon Aug 01 2022 21:48:53 GMT+0300 (Eastern European Summer Time)',
           preview: 'http://placeimg.com/640/300',
           avatar: 'http://placeimg.com/640/400',
-          footer: 'some test caption for footer...'
+          footer: 'some test caption for footer...',
+          requiredIdentity: ['user', 'admin']
         },
         {
           id: '57fc2d4c-cadf-4e8f-9a32-3932b53c5f8f',
@@ -62,6 +64,7 @@ export class FeedComponent {
           updatedAt: 'Mon Aug 01 2022 21:48:53 GMT+0300 (Eastern European Summer Time)',
           preview: 'http://placeimg.com/640/640',
           avatar: 'http://placeimg.com/640/400',
+          requiredIdentity: ['admin']
         },
         {
           id: '6cd0d556-fb4d-42f9-af63-0c385303752e',
@@ -76,6 +79,7 @@ export class FeedComponent {
           updatedAt: 'Mon Aug 01 2022 21:48:53 GMT+0300 (Eastern European Summer Time)',
           preview: 'http://placeimg.com/640/600',
           avatar: 'http://placeimg.com/640/400',
+          requiredIdentity: ['user', 'admin']
         },
         {
           id: '24191a4e-e132-4f80-91a3-1b3cd6985991',
@@ -89,6 +93,7 @@ export class FeedComponent {
           updatedAt: 'Mon Aug 01 2022 21:48:53 GMT+0300 (Eastern European Summer Time)',
           preview: 'http://placeimg.com/640/480',
           avatar: 'http://placeimg.com/640/400',
+          requiredIdentity: ['user', 'admin']
         },
         {
           id: '90e32dd6-2e97-4a02-8c68-5b4d1a7ff6c6',
@@ -102,6 +107,7 @@ export class FeedComponent {
           updatedAt: 'Mon Aug 01 2022 21:48:53 GMT+0300 (Eastern European Summer Time)',
           preview: 'http://placeimg.com/640/480',
           avatar: 'http://placeimg.com/640/400',
+          requiredIdentity: ['user', 'admin']
         }
       ];
     } else {

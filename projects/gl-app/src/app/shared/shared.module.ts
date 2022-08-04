@@ -7,6 +7,7 @@ import { CardComponent } from './components/card/card.component';
 import { CardPostComponent } from './components/card-post/card-post.component';
 import { NoDataComponent } from './components/no-data/no-data.component';
 import { NoDataPipe } from './pipes/no-data.pipe';
+import { IdentityDirective } from './directives/identity.directive';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { NoDataPipe } from './pipes/no-data.pipe';
     CardPostComponent,
     NoDataComponent,
     NoDataPipe,
+    IdentityDirective,
   ],
   imports: [
     CommonModule,
