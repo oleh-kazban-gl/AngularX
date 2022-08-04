@@ -1,9 +1,13 @@
 <button mat-flat-button color="primary" (click)="getData()">Get data</button>
 
-<pre>Title: {{ title }}</pre>
+<pre [ngStyle]="style">Title: {{ title }}</pre>
 
 <ng-container *ngIf="entries.length; else noData">
-  <gl-card-post *ngFor="let card of entries" [model]="card"></gl-card-post>
+  <gl-card-post
+    *ngFor="let card of entries; index as i"
+    [model]="card"
+    [ngClass]="{ even: i % 2 === 0, odd: i % 2 !== 0 }"
+  ></gl-card-post>
 </ng-container>
 
 <ng-template #noData>

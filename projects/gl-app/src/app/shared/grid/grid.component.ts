@@ -13,6 +13,14 @@ export class GridComponent {
 
   @Output() update: EventEmitter<any> = new EventEmitter();
 
+  get style() {
+    return {
+      'font-style': 'italic',
+      'font-weight': 'bold',
+      'font-size': '24px'
+    }
+  }
+
   getData(): void {
     this.update.emit();
   }
