@@ -30,12 +30,14 @@
       "@gl/material": [
         "./projects/gl-app/src/app/shared/material.module.ts"
       ],
-
       "@gl/components": [
         "./projects/gl-app/src/app/shared/components"
       ],
       "@gl/pipes": [
         "./projects/gl-app/src/app/shared/pipes"
+      ],
+      "@gl/directives": [
+        "./projects/gl-app/src/app/shared/directives"
       ],
     }
   },

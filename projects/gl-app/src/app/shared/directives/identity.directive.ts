@@ -6,7 +6,7 @@ const currentUserRoles = ['user'];
   selector: '[glIdentity]'
 })
 export class IdentityDirective {
-  @Input() set glIdentity(roles: Array<any>) {
+  @Input() set glIdentity(roles: Array<string>) {
     if (this.hasRequiredIdentity(roles)) {
       this.viewContainerRef.createEmbeddedView(this.templateRef);
       this.rendered = true;
@@ -23,7 +23,7 @@ export class IdentityDirective {
     private viewContainerRef: ViewContainerRef
   ) { }
 
-  private hasRequiredIdentity(roles: Array<any>): boolean {
+  private hasRequiredIdentity(roles: Array<string>): boolean {
     return roles.some(r => currentUserRoles.some(c => c === r));
   }
 
