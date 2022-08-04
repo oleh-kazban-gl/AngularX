@@ -5,7 +5,11 @@
 <pre *ngIf="!entries.length">No Entries</pre>
 
 <ng-container *ngIf="entries.length">
-  <gl-card-projection *ngFor="let card of entries">
+  <div *ngIf="adTemplate">
+    <ng-container [ngTemplateOutlet]="adTemplate"></ng-container>
+  </div>
+
+  <gl-card-projection *ngFor="let card of entries" [model]="card">
     <h1 title>{{ card.title }}</h1>
     <p content>{{ card.post }}</p>
     <span footer>Date: {{ card.postedAt }}</span>

@@ -1,16 +1,17 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output, SimpleChanges, OnChanges } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output, SimpleChanges, OnChanges, TemplateRef } from '@angular/core';
 import { GridService } from './grid.service';
 
 @Component({
   selector: 'gl-grid',
   templateUrl: './grid.component.html',
   styleUrls: ['./grid.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GridComponent implements OnInit, OnChanges {
   @Input() entries: Array<any> = [];
   @Input() title: string = '';
   @Input() staticTitle: string = '';
+  @Input() adTemplate!: TemplateRef<HTMLElement>;
 
   // private _entries: Array<any> = [];
 

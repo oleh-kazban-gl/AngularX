@@ -4,6 +4,7 @@
   </mat-card-title>
   <mat-card-content>
     <ng-content select="[content]"></ng-content>
+    <pre>model: {{ model | json }}</pre>
   </mat-card-content>
   <mat-card-footer>
     <ng-content select="[footer]"></ng-content>

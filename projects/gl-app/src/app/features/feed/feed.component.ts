@@ -1,11 +1,11 @@
-import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, ChangeDetectionStrategy, Component, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, ChangeDetectionStrategy, Component, ContentChild, OnChanges, OnDestroy, OnInit, SimpleChanges, TemplateRef } from '@angular/core';
 import { GridService } from '../../shared/grid/grid.service';
 
 @Component({
   selector: 'gl-feed',
   templateUrl: './feed.component.html',
   styleUrls: ['./feed.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FeedComponent implements OnInit, OnChanges, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy {
   posts: Array<any> = [];
@@ -22,9 +22,9 @@ export class FeedComponent implements OnInit, OnChanges, AfterContentInit, After
   ngOnInit(): void {
     console.log('ngOnInit');
 
-    setTimeout(() => {
-      this.getData();
-    }, 3000)
+    // setTimeout(() => {
+    //   this.getData();
+    // }, 3000)
   }
 
   ngDoCheck(): void {
