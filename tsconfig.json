@@ -39,6 +39,9 @@
       "@gl/directives": [
         "./projects/gl-app/src/app/shared/directives"
       ],
+      "@gl/services": [
+        "./projects/gl-app/src/app/shared/services"
+      ],
     }
   },
   "angularCompilerOptions": {

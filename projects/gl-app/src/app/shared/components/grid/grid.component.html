@@ -1,14 +1,21 @@
-<button mat-flat-button color="primary" (click)="getData()">Get data</button>
+<div class="grid">
+  <div class="controls">
+    <button mat-flat-button color="primary" (click)="getData()">Get data</button>
 
-<pre [ngStyle]="style">Title: {{ title }}</pre>
+    <button mat-flat-button color="primary" (click)="getCurrentUserData()">
+      Get current user data
+    </button>
+  </div>
 
-<ng-container *ngIf="entries.length; else noData">
-  <gl-card-post
-    *ngFor="let card of entries; index as i"
-    [model]="card"
-    [ngClass]="{ even: i % 2 === 0, odd: i % 2 !== 0 }"
-  ></gl-card-post>
-</ng-container>
+  <h1 class="title">{{ title }}</h1>
+  <h3 class="sub-title">{{ entries.length }} Entries</h3>
+
+  <div class="content">
+    <ng-container *ngIf="entries.length; else noData">
+      <gl-card-post *ngFor="let card of entries; index as i" [model]="card" [id]="i"></gl-card-post>
+    </ng-container>
+  </div>
+</div>
 
 <ng-template #noData>
   <gl-no-data noDataText="No posts yet..."></gl-no-data>

@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card (click)="onClick($event)">
   <mat-card-title-group>
     <img mat-card-avatar *ngIf="model.avatar" [src]="model.avatar" />
     <mat-card-title>{{ model.title }}</mat-card-title>

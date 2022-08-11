@@ -14,4 +14,5 @@ export class CardComponent {
     content: '',
     footer: ''
   };
+  @Input() id: number = 0;
 }
