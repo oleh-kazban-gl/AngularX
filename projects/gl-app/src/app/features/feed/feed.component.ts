@@ -1,7 +1,10 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
-import { IDataType } from '@gl/components';
-import { DataService } from '@gl/services';
+import { distinctUntilChanged, switchMap, Observable, BehaviorSubject } from 'rxjs';
+
+import { IGridOptions } from '@gl/components';
+import { IPost } from './feed.model';
+import { FeedService } from './feed.service';
 
 @Component({
   selector: 'gl-feed',
@@ -9,27 +12,24 @@ import { DataService } from '@gl/services';
   styleUrls: ['./feed.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class FeedComponent {
-  posts: Array<any> = [];
-  gridTitle = 'Feed';
+export class FeedComponent implements OnInit {
+  posts$!: Observable<Array<IPost>>;
+  gridOptions$: BehaviorSubject<any> = new BehaviorSubject(undefined);
 
   constructor(
-    private dataService: DataService
+    private feedService: FeedService
   ) { }
 
-  onGridUpdate(options: IDataType): void {
-    console.log('options: ', options);
-
-    this.gridTitle = 'Updated Feed';
-    this.getData(options);
+  ngOnInit(): void {
+    this.posts$ = this.gridOptions$.pipe(
+      distinctUntilChanged((prev, curr) => {
+        return prev?.sorting === curr?.sorting;
+      }),
+      switchMap(options => this.feedService.getPosts(options))
+    );
   }
 
-  private getData(options: IDataType): void {
-    if (options && options.dataType) {
-      this.posts = this.dataService.getDataByType(options.dataType);
-    } else {
-      this.posts = this.dataService.getData();
-    }
+  onOptionsChange(options: IGridOptions): void {
+    this.gridOptions$.next(options);
   }
-
 }

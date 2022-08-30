@@ -18,10 +18,10 @@ const declarations = [
     CommonModule,
     RouterModule,
     MaterialModule,
-    SharedModule
+    SharedModule,
   ],
   exports: [
     ...declarations
-  ]
+  ],
 })
 export class CoreModule { }

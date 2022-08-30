@@ -23,13 +23,8 @@
             "polyfills": "projects/gl-app/src/polyfills.ts",
             "tsConfig": "projects/gl-app/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "projects/gl-app/src/favicon.ico",
-              "projects/gl-app/src/assets"
-            ],
-            "styles": [
-              "projects/gl-app/src/styles.scss"
-            ],
+            "assets": ["projects/gl-app/src/favicon.ico", "projects/gl-app/src/assets"],
+            "styles": ["projects/gl-app/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -75,7 +70,10 @@
               "browserTarget": "gl-app:build:development"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "development",
+          "options": {
+            "proxyConfig": "projects/gl-app/proxy.conf.json"
+          }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
@@ -91,31 +89,21 @@
             "tsConfig": "projects/gl-app/tsconfig.spec.json",
             "karmaConfig": "projects/gl-app/karma.conf.js",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "projects/gl-app/src/favicon.ico",
-              "projects/gl-app/src/assets"
-            ],
-            "styles": [
-              "projects/gl-app/src/styles.scss"
-            ],
+            "assets": ["projects/gl-app/src/favicon.ico", "projects/gl-app/src/assets"],
+            "styles": ["projects/gl-app/src/styles.scss"],
             "scripts": []
           }
         },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": [
-              "projects/gl-app/**/*.ts",
-              "projects/gl-app/**/*.html"
-            ]
+            "lintFilePatterns": ["projects/gl-app/**/*.ts", "projects/gl-app/**/*.html"]
           }
         }
       }
     }
   },
   "cli": {
-    "schematicCollections": [
-      "@angular-eslint/schematics"
-    ]
+    "schematicCollections": ["@angular-eslint/schematics"]
   }
 }

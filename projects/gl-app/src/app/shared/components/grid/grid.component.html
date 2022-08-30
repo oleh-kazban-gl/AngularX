@@ -1,18 +1,21 @@
 <div class="grid">
   <div class="controls">
-    <button mat-flat-button color="primary" (click)="getData()">Get data</button>
-
-    <button mat-flat-button color="primary" (click)="getCurrentUserData()">
-      Get current user data
-    </button>
+    <div class="sorting">
+      <span>Sorting:</span>
+      <button mat-icon-button (click)="sort(sorting.ASC)">
+        <mat-icon>arrow_upward</mat-icon>
+      </button>
+      <button mat-icon-button (click)="sort(sorting.DESC)">
+        <mat-icon>arrow_downward</mat-icon>
+      </button>
+    </div>
   </div>
 
-  <h1 class="title">{{ title }}</h1>
-  <h3 class="sub-title">{{ entries.length }} Entries</h3>
+  <h1 class="title" *ngIf="title">{{ title }}</h1>
 
   <div class="content">
-    <ng-container *ngIf="entries.length; else noData">
-      <gl-card-post *ngFor="let card of entries; index as i" [model]="card" [id]="i"></gl-card-post>
+    <ng-container *ngIf="entries$ | async as posts; else noData">
+      <gl-card-post *ngFor="let card of posts; index as i" [model]="card" [id]="i"></gl-card-post>
     </ng-container>
   </div>
 </div>

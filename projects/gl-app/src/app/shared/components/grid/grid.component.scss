@@ -2,9 +2,10 @@
   .controls {
     display: flex;
     flex-wrap: wrap;
+    justify-content: flex-end;
 
     button {
-      margin: 0 0.251rem;
+      margin: 0 0.25rem;
 
       &:first-child {
         margin-left: 0;
@@ -12,12 +13,6 @@
       &:last-child {
         margin-right: 0;
       }
-    }
-  }
-
-  .even {
-    ::ng-deep mat-card {
-      background-color: yellow;
     }
   }
 }

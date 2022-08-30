@@ -1,12 +1,14 @@
-import { Inject } from '@angular/core';
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
-import { APP_ENDPOINTS } from '@gl/shared';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 
-export interface IDataType {
-  dataType: DataTypeEnum;
+import { Observable } from 'rxjs';
+
+export interface IGridOptions {
+  sorting: GridSortEnum
 }
-export enum DataTypeEnum {
-  CurrentUser = 'currentUser'
+
+export enum GridSortEnum {
+  ASC = 'ASC',
+  DESC = 'DESC'
 }
 
 @Component({
@@ -16,34 +18,36 @@ export enum DataTypeEnum {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GridComponent {
-  @Input() entries: Array<any> = [];
+  @Input() entries$!: Observable<Array<any>>;
   @Input() title: string = '';
   @Input() staticTitle: string = '';
-
-  @Output() update: EventEmitter<any> = new EventEmitter();
-
-  constructor(
-    @Inject(APP_ENDPOINTS) appEndpoints: any
-  ) {
-    console.log('value from injection token: ', appEndpoints);
+  @Input()
+  set options(value: IGridOptions) {
+    this._options = value;
+    this.emitChanges();
+  }
+  get options() {
+    return this._options;
   }
 
-  get style() {
-    return {
-      'font-style': 'italic',
-      'font-weight': 'bold',
-      'font-size': '24px'
+  @Output() optionsChange: EventEmitter<IGridOptions> = new EventEmitter();
+
+  sorting = GridSortEnum;
+
+  private _options!: IGridOptions;
+
+  constructor() {
+    this.options = {
+      sorting: GridSortEnum.ASC
     }
   }
 
-  getData(): void {
-    this.update.emit();
+  private emitChanges(): void {
+    this.optionsChange.emit(this.options);
   }
 
-  getCurrentUserData(): void {
-    this.update.emit({
-      dataType: 'currentUser'
-    });
+  sort(direction: GridSortEnum): void {
+    this.options = { ...this.options, sorting: direction };
   }
 
 }

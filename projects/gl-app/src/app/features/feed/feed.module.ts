@@ -5,6 +5,7 @@ import { FeedRoutingModule } from './feed-routing.module';
 import { FeedComponent } from './feed.component';
 import { SharedModule } from '../../shared/shared.module';
 import { MaterialModule } from '../../shared/material.module';
+import { FeedService } from './feed.service';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { MaterialModule } from '../../shared/material.module';
     CommonModule,
     SharedModule,
     MaterialModule,
-    FeedRoutingModule
-  ]
+    FeedRoutingModule,
+  ],
+  providers: [FeedService]
 })
 export class FeedModule { }
