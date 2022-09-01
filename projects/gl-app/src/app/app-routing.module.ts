@@ -20,6 +20,7 @@ const routes: Routes = [
     loadChildren: () => import('./features/about/about.module').then((m) => m.AboutModule),
   },
   { path: 'feed', loadChildren: () => import('./features/feed/feed.module').then(m => m.FeedModule) },
+  { path: 'auth', loadChildren: () => import('./features/auth/auth.module').then(m => m.AuthModule) },
   {
     path: '**',
     redirectTo: 'feed'

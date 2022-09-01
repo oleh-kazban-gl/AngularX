@@ -1,0 +1,45 @@
+<mat-card>
+  <mat-card-title>Sign in</mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+      <p>
+        <mat-form-field>
+          <input matInput placeholder="Email" type="text" id="email" formControlName="email" />
+
+          <mat-error *ngIf="email.touched && email.hasError('required')">
+            Please enter a valid email address
+          </mat-error>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field>
+          <input
+            matInput
+            placeholder="Password"
+            type="password"
+            id="password"
+            formControlName="password"
+          />
+
+          <mat-error *ngIf="password.touched && password.hasError('required')">
+            Please enter your password
+          </mat-error>
+        </mat-form-field>
+      </p>
+      <p class="button">
+        <button type="submit" mat-flat-button [disabled]="!signInForm.valid" color="primary">
+          Sign In
+        </button>
+        <button type="button" routerLink="/auth/sign-up" mat-flat-button color="primary">
+          Sign Up
+        </button>
+      </p>
+
+      <!-- <pre>value: {{ signInForm.value | json }}</pre>
+      <pre>pristine: {{ signInForm.pristine }}</pre>
+      <pre>touched: {{ signInForm.touched }}</pre>
+      <pre>status: {{ signInForm.status }}</pre>
+      <pre>errors: {{ signInForm.errors | json }}</pre> -->
+    </form>
+  </mat-card-content>
+</mat-card>

@@ -7,7 +7,7 @@ import { MaterialModule } from '@gl/material';
 import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
 
 const declarations = [
-  MainLayoutComponent
+  MainLayoutComponent,
 ];
 
 @NgModule({
