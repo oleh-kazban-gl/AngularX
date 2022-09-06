@@ -1,1 +1,17 @@
-<p>about works!</p>
+<mat-card>
+  <mat-card-title>About us</mat-card-title>
+  <mat-card-content>
+    <mat-button-toggle-group name="Team">
+      <mat-button-toggle value="management" routerLinkActive="active" routerLink="/about/management"
+        >Management</mat-button-toggle
+      >
+      <mat-button-toggle value="developers" routerLinkActive="active" routerLink="/about/developers"
+        >Developers</mat-button-toggle
+      >
+      <mat-button-toggle value="designers" routerLinkActive="active" routerLink="/about/designers"
+        >Designers</mat-button-toggle
+      >
+    </mat-button-toggle-group>
+    <router-outlet></router-outlet>
+  </mat-card-content>
+</mat-card>

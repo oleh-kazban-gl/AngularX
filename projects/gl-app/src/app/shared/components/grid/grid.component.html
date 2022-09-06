@@ -15,7 +15,11 @@
 
   <div class="content">
     <ng-container *ngIf="entries$ | async as posts; else noData">
-      <gl-card-post *ngFor="let card of posts; index as i" [model]="card" [id]="i"></gl-card-post>
+      <gl-card-post
+        *ngFor="let card of posts; index as i"
+        [model]="card"
+        (click)="navigate(card.id)"
+      ></gl-card-post>
     </ng-container>
   </div>
 </div>

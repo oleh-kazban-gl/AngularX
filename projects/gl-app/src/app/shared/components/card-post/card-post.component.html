@@ -7,7 +7,6 @@
   <mat-card-content *glIdentity="['user']">
     <img mat-card-image *ngIf="model.preview" [src]="model.preview" />
     <p>{{ model.content }}</p>
-    <pre>{{ model | json }}</pre>
   </mat-card-content>
   <mat-card-footer>{{ model.updatedAt | date }} | {{ model.footer | noData }}</mat-card-footer>
 </mat-card>

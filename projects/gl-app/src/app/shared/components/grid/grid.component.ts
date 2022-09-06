@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Observable } from 'rxjs';
 
@@ -36,7 +37,9 @@ export class GridComponent {
 
   private _options!: IGridOptions;
 
-  constructor() {
+  constructor(
+    private router: Router
+  ) {
     this.options = {
       sorting: GridSortEnum.ASC
     }
@@ -46,8 +49,12 @@ export class GridComponent {
     this.optionsChange.emit(this.options);
   }
 
-  sort(direction: GridSortEnum): void {
+  public sort(direction: GridSortEnum): void {
     this.options = { ...this.options, sorting: direction };
+  }
+
+  public navigate(id: string): void {
+    this.router.navigateByUrl(`/posts/${id}`);
   }
 
 }

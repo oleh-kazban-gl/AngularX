@@ -59,5 +59,80 @@
     }
   ],
   "comments": [{ "id": 1, "body": "some comment", "postId": 1 }],
-  "profile": { "name": "typicode" }
+  "profile": { "name": "typicode" },
+  "management": {
+    "name": "Management",
+    "members": [
+      {
+        "firstName": "Jade",
+        "lastName": "Rutherford",
+        "position": "Regional Brand Assistant",
+        "avatar": "http://placeimg.com/640/100"
+      },
+      {
+        "firstName": "Ellen",
+        "lastName": "Klocko",
+        "position": "Regional Response Orchestrator",
+        "avatar": "http://placeimg.com/640/101"
+      },
+      {
+        "firstName": "Charity",
+        "lastName": "Stark",
+        "position": "National Identity Director",
+        "avatar": "http://placeimg.com/640/102"
+      },
+      {
+        "firstName": "Cole",
+        "lastName": "Bernier",
+        "position": "Principal Group Representative",
+        "avatar": "http://placeimg.com/640/103"
+      }
+    ]
+  },
+  "developers": {
+    "name": "Developers",
+    "members": [
+      {
+        "firstName": "Lacy",
+        "lastName": "Purdy",
+        "position": "Solutions architect",
+        "avatar": "http://placeimg.com/640/102"
+      },
+      {
+        "firstName": "Cyrus",
+        "lastName": "Bernhard",
+        "position": "Lead developer",
+        "avatar": "http://placeimg.com/640/104"
+      },
+      {
+        "firstName": "Isaias",
+        "lastName": "Kautzer",
+        "position": "Lead developer",
+        "avatar": "http://placeimg.com/640/106"
+      },
+      {
+        "firstName": "Brooklyn",
+        "lastName": "Doyle",
+        "position": "QA",
+        "avatar": "http://placeimg.com/640/108"
+      }
+    ]
+  },
+  "designers": {
+    "name": "Designers",
+    "members": [
+      {
+        "firstName": "Vicky",
+        "lastName": "Bauch",
+        "position": "Senior UX specialist",
+        "avatar": "http://placeimg.com/640/101"
+      },
+      {
+        "firstName": "Halle",
+        "lastName": "Kessler",
+        "position": "UX specialist",
+        "avatar": "http://placeimg.com/640/103"
+      }
+    ]
+  }
 }

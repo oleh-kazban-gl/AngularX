@@ -4,7 +4,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignOutComponent } from './sign-out/sign-out.component';
 import { SignInComponent } from './sign-in/sign-in.component';
-import { SignInTDFormComponent } from './sign-in/sign-in-td-form.component';
 
 const routes: Routes = [
   {

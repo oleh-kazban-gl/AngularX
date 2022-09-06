@@ -6,11 +6,15 @@ import { FeedComponent } from './feed.component';
 import { SharedModule } from '../../shared/shared.module';
 import { MaterialModule } from '../../shared/material.module';
 import { FeedService } from './feed.service';
+import { PostComponent } from './post/post.component';
+import { FeedPostResolver } from './feed-post.resolver';
+import { FeedPostGuard } from './feed-post.guard';
 
 
 @NgModule({
   declarations: [
-    FeedComponent
+    FeedComponent,
+    PostComponent
   ],
   imports: [
     CommonModule,
@@ -18,6 +22,6 @@ import { FeedService } from './feed.service';
     MaterialModule,
     FeedRoutingModule,
   ],
-  providers: [FeedService]
+  providers: [FeedService, FeedPostResolver, FeedPostGuard]
 })
 export class FeedModule { }

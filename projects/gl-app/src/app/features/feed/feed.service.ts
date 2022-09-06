@@ -37,4 +37,8 @@ export class FeedService {
       params: options as any
     });
   }
+
+  getPost(id: string): Observable<IPost> {
+    return this.http.get<IPost>(`${this.appEndpoints.api}/posts/${id}`);
+  }
 }

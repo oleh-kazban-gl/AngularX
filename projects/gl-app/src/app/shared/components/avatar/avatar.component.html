@@ -1,0 +1,7 @@
+<mat-card class="avatar mat-elevation-z10">
+  <mat-card-content class="content">
+    <img mat-card-avatar *ngIf="model.avatar" [src]="model.avatar" />
+    <span>{{ model.firstName }}, {{ model.lastName }}</span>
+    <span>{{ model.position }}</span>
+  </mat-card-content>
+</mat-card>

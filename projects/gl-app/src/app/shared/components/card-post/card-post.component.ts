@@ -17,7 +17,8 @@ export class CardPostComponent extends CardComponent {
     content: '',
     footer: '',
     postedAt: '',
-    updatedAt: ''
+    updatedAt: '',
+    requiredIdentity: []
   };
 
   get subTitle(): string {

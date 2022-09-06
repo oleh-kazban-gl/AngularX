@@ -5,11 +5,14 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'feed'
+    redirectTo: 'posts'
   },
   {
-    path: 'feed',
+    path: 'posts',
     loadChildren: () => import('./features/feed/feed.module').then((m) => m.FeedModule),
+    data: {
+      breadcrumbNode: 'Home'
+    }
   },
   {
     path: 'home',
@@ -19,16 +22,16 @@ const routes: Routes = [
     path: 'about',
     loadChildren: () => import('./features/about/about.module').then((m) => m.AboutModule),
   },
-  { path: 'feed', loadChildren: () => import('./features/feed/feed.module').then(m => m.FeedModule) },
   { path: 'auth', loadChildren: () => import('./features/auth/auth.module').then(m => m.AuthModule) },
+  { path: 'errors', loadChildren: () => import('./features/errors/errors.module').then(m => m.ErrorsModule) },
   {
     path: '**',
-    redirectTo: 'feed'
+    redirectTo: 'posts'
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { enableTracing: false })],
   exports: [RouterModule],
 })
 export class AppRoutingModule { }

@@ -1,0 +1,6 @@
+<div *ngIf="team$ | async as team">
+  <h2>{{ team.name }}</h2>
+  <div class="grid">
+    <gl-avatar *ngFor="let member of team.members" [model]="member"></gl-avatar>
+  </div>
+</div>
