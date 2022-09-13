@@ -1,5 +1,5 @@
 <div class="grid">
-  <div class="controls">
+  <div class="controls" *ngIf="!(loading$ | async)">
     <div class="sorting">
       <span>Sorting:</span>
       <button mat-icon-button (click)="sort(sorting.ASC)">
@@ -14,16 +14,21 @@
   <h1 class="title" *ngIf="title">{{ title }}</h1>
 
   <div class="content">
-    <ng-container *ngIf="entries$ | async as posts; else noData">
-      <gl-card-post
-        *ngFor="let card of posts; index as i"
-        [model]="card"
-        (click)="navigate(card.id)"
-      ></gl-card-post>
+    <ng-container *ngIf="!(loading$ | async); else loading">
+      <ng-container *ngIf="entries$ | async as posts; else noData">
+        <gl-card
+          *ngFor="let card of posts; index as i"
+          [model]="card"
+          (click)="navigate(card.id)"
+        ></gl-card>
+      </ng-container>
     </ng-container>
   </div>
 </div>
 
 <ng-template #noData>
   <gl-no-data noDataText="No posts yet..."></gl-no-data>
+</ng-template>
+<ng-template #loading>
+  <gl-spinner></gl-spinner>
 </ng-template>

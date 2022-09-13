@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+
+import { Store } from '@ngrx/store';
+import { filter } from 'rxjs';
+
+import { setCurrentRoute } from '../../../state+/root.actions';
 
 @Component({
   selector: 'gl-main-layout',
@@ -7,7 +13,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainLayoutComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private store: Store<any>
+  ) {
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe(
+      (event: any) => this.store.dispatch(setCurrentRoute({ data: { ...event, title: event.url } }))
+    )
+  }
 
   ngOnInit(): void { }
 }

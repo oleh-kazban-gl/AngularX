@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 export interface IPost {
   id: string;
   title: string;
@@ -9,4 +10,12 @@ export interface IPost {
   avatar: string;
   footer?: string;
   requiredIdentity: Array<string>;
+}
+
+export interface IPostState {
+  id: number;
+  data: IPost,
+  loaded: boolean;
+  loading: boolean;
+  error: HttpErrorResponse | null
 }

@@ -30,6 +30,8 @@ export class GridComponent {
   get options() {
     return this._options;
   }
+  @Input()
+  loading$!: Observable<boolean>;
 
   @Output() optionsChange: EventEmitter<IGridOptions> = new EventEmitter();
 

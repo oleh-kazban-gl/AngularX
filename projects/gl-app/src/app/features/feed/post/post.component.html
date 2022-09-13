@@ -1,2 +1,4 @@
-<gl-card-post *ngIf="post$ | async as post" [model]="post"></gl-card-post>
+<gl-card *ngIf="post$ | async as post" [model]="$any(post)"></gl-card>
 <button type="button" routerLink="/" mat-flat-button color="primary">Go Home</button>
+
+<!-- <pre>post: {{ post$ | async | json }}</pre> -->

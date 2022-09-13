@@ -12,6 +12,45 @@
 - `npm i -d husky lint-staged` (Use Husky tasks for Git hooks)
 - `npm i -d webpack-bundle-analyzer` (Add bundle analysis tool)
 
+# NgRx setup
+
+Note that NgRx supports `ng add`. In this case CLI will update necessary files in order to have working state management from the scratch:
+
+- `ng add @ngrx/store@latest --no-minimal` (installs and creates configaration for the app state)
+- `ng add @ngrx/effects@latest` (installs effects and updates modules)
+- `ng add @ngrx/entity@latest` (installs entity)
+- `ng add @ngrx/store-devtools@latest` (adds devtools support)
+- `ng add @ngrx/schematics@latest` (adds schematics support)
+
+Or use manual installation via NMP/Yarn (preffered):
+
+- `npm i @ngrx/store @ngrx/effects @ngrx/entity @ngrx/store-devtools --save` (download Store/Effects/Entity/DevTools packages without modification of application files)
+- `npm i @ngrx/schematics --save-dev` (adds schematics support)
+
+## Initial State setup
+
+- `ng g @ngrx/schematics:store State --root --module app.module.ts` (Generate the initial state management and register it within the App)
+
+## Initial Effects setup
+
+- `ng g @ngrx/schematics:effect App --root --module app.module.ts` (Generate the root effects and register it within the App)
+
+## Generate Feature store
+
+- `ng generate @ngrx/schematics:store feed --project gl-app --module features/feed/feed.module.ts --state-path features/feed/state+`
+
+## Genereate Feature Actions
+
+- `ng generate @ngrx/schematics:action features/feed/state+/feed`
+
+## Genereate Feature Reducer
+
+- `ng generate @ngrx/schematics:reducer features/feed/state+/feed`
+
+## Genereate Feature Selectors
+
+- `ng generate @ngrx/schematics:selector features/feed/state+/feed`
+
 # AngularX
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.4.

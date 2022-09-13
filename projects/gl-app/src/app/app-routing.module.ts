@@ -11,7 +11,8 @@ const routes: Routes = [
     path: 'posts',
     loadChildren: () => import('./features/feed/feed.module').then((m) => m.FeedModule),
     data: {
-      breadcrumbNode: 'Home'
+      breadcrumbNode: 'Home',
+      title: 'Posts feed'
     }
   },
   {

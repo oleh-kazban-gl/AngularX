@@ -8,14 +8,18 @@ import { FeedPostGuard } from './feed-post.guard';
 
 const routes: Routes = [
   { path: '', component: FeedComponent },
-  // { path: ':id', component: PostComponent },
+  {
+    path: ':id', component: PostComponent, data: {
+      title: 'Post'
+    }
+  },
   // {
   //   path: ':id', component: PostComponent, data: {
   //     breadcrumbNode: 'Post'
   //   }
   // },
   // { path: ':id', component: PostComponent, canActivate: [FeedPostGuard] },
-  { path: ':id', component: PostComponent, resolve: { post: FeedPostResolver } }
+  // { path: ':id', component: PostComponent, resolve: { post: FeedPostResolver } }
 ];
 
 @NgModule({

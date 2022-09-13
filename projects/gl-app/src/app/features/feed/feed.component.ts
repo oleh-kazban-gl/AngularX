@@ -1,10 +1,13 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
-import { distinctUntilChanged, switchMap, Observable, BehaviorSubject } from 'rxjs';
+import { Observable } from 'rxjs';
+import { Store, select } from '@ngrx/store';
 
+import { IPost } from './state+/posts/posts.models';
+import { getFeed, isFeedLoaded, isFeedLoading } from './state+/feed/feed.selectors';
+import { loadFeed } from './state+/feed/feed.actions';
 import { IGridOptions } from '@gl/components';
-import { IPost } from './feed.model';
-import { FeedService } from './feed.service';
+import { IFeedPartialState } from './state+/feed/feed.reducer';
 
 @Component({
   selector: 'gl-feed',
@@ -14,22 +17,28 @@ import { FeedService } from './feed.service';
 })
 export class FeedComponent implements OnInit {
   posts$!: Observable<Array<IPost>>;
-  gridOptions$: BehaviorSubject<any> = new BehaviorSubject(undefined);
+  isLoading$!: Observable<boolean>;
 
   constructor(
-    private feedService: FeedService
-  ) { }
+    private store: Store<IFeedPartialState>
+  ) {
+    // this.store.dispatch(loadFeed({}));
 
-  ngOnInit(): void {
-    this.posts$ = this.gridOptions$.pipe(
-      distinctUntilChanged((prev, curr) => {
-        return prev?.sorting === curr?.sorting;
-      }),
-      switchMap(options => this.feedService.getPosts(options))
-    );
+    this.store.pipe(select(isFeedLoaded)).subscribe(isFeedLoaded => {
+      if (!isFeedLoaded) {
+        this.store.dispatch(loadFeed({}));
+      }
+    })
   }
 
-  onOptionsChange(options: IGridOptions): void {
-    this.gridOptions$.next(options);
+  ngOnInit(): void {
+    this.posts$ = this.store.pipe(select(getFeed));
+    this.isLoading$ = this.store.pipe(select(isFeedLoading));
+  }
+
+  onGridOptionsChange(gridOptions: IGridOptions): void {
+    this.store.dispatch(loadFeed({
+      options: gridOptions
+    }));
   }
 }
