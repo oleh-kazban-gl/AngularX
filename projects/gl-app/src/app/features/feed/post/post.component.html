@@ -1,4 +1,7 @@
 <gl-card *ngIf="post$ | async as post" [model]="$any(post)"></gl-card>
 <button type="button" routerLink="/" mat-flat-button color="primary">Go Home</button>
 
-<!-- <pre>post: {{ post$ | async | json }}</pre> -->
+  <pre>
+    <span>sanitized URL</span>
+    <a href="{{ 'http://\<script>alert("Hey");\</script>') }}">Link</a>
+  </pre>
